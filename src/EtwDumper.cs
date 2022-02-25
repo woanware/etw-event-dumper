@@ -220,7 +220,6 @@ namespace etw_event_dumper
                     {
                         EventElementReader.MoveToAttribute(AttribIndex);
 
-                        // Cap maxlen for eventdata elements to 10k
                         if (EventElementReader.Value.Length > 10000)
                         {
                             DataValue = EventElementReader.Value.Substring(0, Math.Min(EventElementReader.Value.Length, 10000));
@@ -235,7 +234,6 @@ namespace etw_event_dumper
             }
             catch
             {
-                // For debugging (?), never seen this fail
                 properties.Add("XmlEventParsing", "false");
             }
             er.XmlEventData = properties;

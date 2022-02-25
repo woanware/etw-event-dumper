@@ -4,6 +4,9 @@ namespace etw_event_dumper
 {
     internal class Global
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public enum FilterType
         {
             None,
@@ -11,6 +14,9 @@ namespace etw_event_dumper
             ProcessName
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public class EventRecord
         {
             public Guid ProviderGuid { get; set; }
