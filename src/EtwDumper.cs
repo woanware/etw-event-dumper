@@ -84,7 +84,7 @@ namespace etw_event_dumper
             using (tes = new TraceEventSession("etw-event-dumper", null))
             using (etes = new ETWTraceEventSource("etw-event-dumper", TraceEventSourceType.Session))
             using (fileStream = new FileStream(_outputFile, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite))
-            using (streamWriter = new StreamWriter(fileStream, Encoding.UTF8, 65536))
+            using (streamWriter = new StreamWriter(fileStream,bufferSize: 65536))
             {
                 var dtep = new DynamicTraceEventParser(etes);
                 dtep.All += ParseEvents;
